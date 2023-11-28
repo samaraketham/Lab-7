@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mad Lib Form</title>
+</head>
+<body>
+    <h1>Mad Lib Game</h1>
+    <form action="/" method="POST">
+        <label for="noun">Noun:</label>
+        <input type="text" id="noun" name="noun"><br><br>
+
+        <label for="adjective">Adjective:</label>
+        <input type="text" id="adjective" name="adjective"><br><br>
+
+        <label for="verb">Verb:</label>
+        <input type="text" id="verb" name="verb"><br><br>
+
+        <label for="place">Place:</label>
+        <input type="text" id="place" name="place"><br><br>
+
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color"><br><br>
+
+        <input type="submit" value="Generate Mad Lib">
+    </form>
+    <footer>
+        <h1>Addendum</h1>
+        <p>
+            <strong>Express Setup:</strong> The code begins by importing the Express framework (<code>const express = require('express');</code>) and creating an instance of the Express application (<code>const app = express();</code>).
+        </p>
+        <p>
+            <strong>Middleware Setup:</strong>
+            <br>
+            <strong>express.urlencoded:</strong> Middleware to parse incoming request bodies with urlencoded payloads. This middleware is used to parse form data sent via POST requests (<code>app.use(express.urlencoded({ extended: true }));</code>).
+            <br>
+            <strong>express.static:</strong> Middleware to serve static files from the 'public' directory. For example, it can serve an HTML file named 'lab 7.html' located in the 'public' directory (<code>app.use(express.static('public'));</code>).
+        </p>
+        <p>
+            <strong>Routing:</strong>
+            <br>
+            <code>app.get('/')</code>: Handles GET requests to the root endpoint ('/'). It responds by sending the 'lab 7.html' file when someone accesses the root URL (<code>res.sendFile(__dirname + '/lab 7.html');</code>).
+            <br>
+            <code>app.post('/')</code>: Handles POST requests to the root endpoint ('/'). It retrieves form input values from the request body, constructs a Mad Lib using those values, and sends the filled Mad Lib as the server response (<code>res.send(madLib);</code>).
+        </p>
+        <p>
+            <strong>Server Listening:</strong> The server is started and set to listen on the specified port (<code>app.listen(port, () => { console.log(`Server running on port ${port}`); });</code>).
+        </p>
+        <p>
+            Overall, this code sets up a basic Express server that serves a form ('lab 7.html') on the root URL ('/') and processes form submissions to create a Mad Lib story based on the submitted data.
+        </p>
+        
+
+    </footer>
+</body>
+</html>
